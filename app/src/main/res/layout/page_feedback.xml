@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="0dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:text="Museum Angkut"
+        android:layout_weight="0"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#808285"
+        android:textSize="15dp"
+        android:text="Wisata"
+        android:layout_weight="0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:text="Tambahkan Rating"
+        android:layout_weight="0"
+        android:layout_marginTop="15dp"/>
+
+
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/RatingBar"
+        android:numStars="5"
+        android:rating="1.5"
+        android:stepSize="0.5"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/border"
+        android:text="tulis review..."
+        android:gravity="top"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_photo_camera_black_24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:text="Upload Foto"
+        android:layout_weight="0"
+        android:layout_marginTop="5dp"/>
+
+
+
+    <Button
+            android:id="@+id/bttn_submit_review"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_box"
+            android:text="Masukan Review"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:layout_marginTop="15dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:text="Tutup"
+        android:layout_weight="0"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
