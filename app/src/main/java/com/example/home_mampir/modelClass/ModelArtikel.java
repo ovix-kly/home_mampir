@@ -1,4 +1,4 @@
-package com.example.home_mampir;
+package com.example.home_mampir.modelClass;
 
 public class ModelArtikel {
     String judulArtikel;

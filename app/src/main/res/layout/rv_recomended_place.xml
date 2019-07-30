@@ -18,10 +18,10 @@
         android:background="#f1f2f2">
 
         <ImageView
+            android:id="@+id/bgRekomendasi"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/sample_foto"/>
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/namaLokasi"

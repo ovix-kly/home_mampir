@@ -1,21 +1,29 @@
-package com.example.home_mampir;
+package com.example.home_mampir.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.home_mampir.modelClass.ModelTempatRekomendasi;
+import com.example.home_mampir.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class TempatRekomedasiAdapter extends RecyclerView.Adapter<TempatRekomedasiAdapter.TempatRekomedasiViewHolder> {
 
 
-    private ArrayList<ModelTempatRekomendasi> dataList;
+    public String StaticURLImg = "https://mampir.id/uploads/";
+    private ArrayList<String> detailTempatTerdekat;
+    private List<ModelTempatRekomendasi> mTempatRekomendasi;
 
-    public TempatRekomedasiAdapter(ArrayList<ModelTempatRekomendasi> dataList){
-        this.dataList = dataList;
+    public TempatRekomedasiAdapter(List<ModelTempatRekomendasi> dataList){
+        this.mTempatRekomendasi = dataList;
     }
 
     @NonNull
@@ -27,15 +35,23 @@ public class TempatRekomedasiAdapter extends RecyclerView.Adapter<TempatRekomeda
 
     @Override
     public void onBindViewHolder(@NonNull TempatRekomedasiViewHolder holder, int position) {
-        holder.namaLokasi.setText(dataList.get(position).getNamaLokasi());
-        holder.jenisLokasi.setText(dataList.get(position).getJenisLokasi());
-        holder.jmlPengunjung.setText(dataList.get(position).getJmlPengunjung());
-        holder.ratingLokasi.setText(dataList.get(position).getRatingLokasi());
+
+        String imgUrl = mTempatRekomendasi.get(position).getThumbnailLandscape();
+        String fixImgUrl = StaticURLImg + imgUrl;
+
+        Picasso.get().load(fixImgUrl).resize(450, 80)
+                .centerCrop().into(holder.bgRekomendasiTempat);
+
+
+        holder.namaLokasi.setText(mTempatRekomendasi.get(position).getName());
+        holder.jenisLokasi.setText(mTempatRekomendasi.get(position).getCategory().getName());
+        holder.jmlPengunjung.setText("2022");
+        holder.ratingLokasi.setText("104");
     }
 
     @Override
     public int getItemCount() {
-        return (dataList != null) ? dataList.size() : 0;
+        return (mTempatRekomendasi != null) ? mTempatRekomendasi.size() : 0;
     }
 
 
@@ -45,6 +61,7 @@ public class TempatRekomedasiAdapter extends RecyclerView.Adapter<TempatRekomeda
         TextView jenisLokasi;
         TextView jmlPengunjung;
         TextView ratingLokasi;
+        ImageView bgRekomendasiTempat;
 
 
         public TempatRekomedasiViewHolder(@NonNull View itemView) {
@@ -53,6 +70,7 @@ public class TempatRekomedasiAdapter extends RecyclerView.Adapter<TempatRekomeda
             jenisLokasi = (TextView)itemView.findViewById(R.id.jenisLokasi);
             jmlPengunjung = (TextView)itemView.findViewById(R.id.jmlPengunjung);
             ratingLokasi = (TextView)itemView.findViewById(R.id.ratingLokasi);
+            bgRekomendasiTempat = (ImageView)itemView.findViewById(R.id.bgRekomendasi);
 
         }
     }

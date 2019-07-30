@@ -6,20 +6,28 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/map">
+        android:orientation="vertical">
+
+
+        <fragment
+            android:id="@+id/mainMapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="554dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_nearby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

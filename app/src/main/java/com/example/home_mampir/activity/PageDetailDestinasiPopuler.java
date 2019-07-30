@@ -1,10 +1,15 @@
-package com.example.home_mampir;
+package com.example.home_mampir.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+
+import com.example.home_mampir.R;
+import com.example.home_mampir.adapter.TempatTerdekatDestinasiAdapter;
+import com.example.home_mampir.adapter.TopDestinasiPopulerAdapter;
+import com.example.home_mampir.modelClass.ModelTempatTerdekat;
+import com.example.home_mampir.modelClass.ModelTempatTerdekatDestinasi;
 
 import java.util.ArrayList;
 
@@ -14,15 +19,15 @@ public class PageDetailDestinasiPopuler extends AppCompatActivity {
     ArrayList<ModelTempatTerdekat> listTopTenTempat;
     RecyclerView rvNearbyDestinationPopuler,rvTopTenPopular;
     TempatTerdekatDestinasiAdapter tempatTerdekatDestinasiAdapter;
-    TopDestinasiPopulerAdapter TopDestinasiPopulerAdapter;
+    com.example.home_mampir.adapter.TopDestinasiPopulerAdapter TopDestinasiPopulerAdapter;
 
     @Override
     public void onCreate(Bundle saveInstance){
         super.onCreate(saveInstance);
         setContentView(R.layout.page_detail_destinasi_favorit);
 
-        addDataTempatTerdekatDestinasi();
-        addDataTopTen();
+        //addDataTempatTerdekatDestinasi();
+        //addDataTopTen();
 
         rvTopTenPopular = (RecyclerView)findViewById(R.id.top_destination);
         rvNearbyDestinationPopuler = (RecyclerView)findViewById(R.id.popular_destination);
@@ -45,7 +50,8 @@ public class PageDetailDestinasiPopuler extends AppCompatActivity {
 
     }
 
-    public void addDataTempatTerdekatDestinasi(){
+
+   /* public void addDataTempatTerdekatDestinasi(){
 
         listTempatTerdekatDestinasi = new ArrayList<>();
         listTempatTerdekatDestinasi.add(new ModelTempatTerdekatDestinasi("Ragunan","Wisata","2100","45"));
@@ -60,7 +66,8 @@ public class PageDetailDestinasiPopuler extends AppCompatActivity {
     }
 
 
-    public void addDataTopTen(){
+
+   public void addDataTopTen(){
 
         listTopTenTempat = new ArrayList<>();
         listTopTenTempat.add(new ModelTempatTerdekat("Ragunan","Wisata","2100","45"));
@@ -72,4 +79,5 @@ public class PageDetailDestinasiPopuler extends AppCompatActivity {
         listTopTenTempat.add(new ModelTempatTerdekat("Kota Tua","Wisata","2100","45"));
         listTopTenTempat.add(new ModelTempatTerdekat("Ancol","Wisata","2100","45"));
     }
+    */
 }
